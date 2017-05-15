@@ -1,0 +1,53 @@
+name:                factorio-blueprints
+version:             0
+synopsis:            Quchen's Stack template
+description:         See README.md
+homepage:            https://github.com/quchen/factorio-blueprints#readme
+license:             BSD3
+license-file:        LICENSE.md
+author:              David »quchen« Luposchainsky <dluposchainsky+factorio-blueprints (λ) gmail>
+maintainer:          David »quchen« Luposchainsky <dluposchainsky+factorio-blueprints (λ) gmail>
+copyright:           David »quchen« Luposchainsky <dluposchainsky+factorio-blueprints (λ) gmail>
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+    build-depends:
+          base
+        , aeson
+        , aeson-lens
+        , aeson-pretty
+        , base
+        , base64-bytestring
+        , bytestring
+        , lens
+        , text
+        , zlib
+    exposed-modules:
+          JsonBlueprint
+    hs-source-dirs:      src
+    ghc-options:         -Wall
+    default-language:    Haskell2010
+
+executable factorio-blueprints-exe
+    build-depends:
+          base
+        , factorio-blueprints
+        , aeson-pretty
+        , bytestring
+
+        , lens
+        , aeson
+        , containers
+        , aeson-lens
+        , text
+    hs-source-dirs:      app
+    main-is:             Main.hs
+    ghc-options:         -threaded -rtsopts -with-rtsopts=-N -Wall
+    default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/quchen/factorio-blueprints
